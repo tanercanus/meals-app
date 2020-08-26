@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
-import {AppLoading} from 'expo';
+import { AppLoading } from 'expo';
+import { enableScreens } from 'react-native-screens';//it improves the performance. 
 
 import MealsNavigator from './navigation/MealsNavigator';
+
+enableScreens();
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -14,12 +17,12 @@ const fetchFonts = () => {
 
 export default function App() {
 
-  const [fontLoaded, setFontLoaded ] = useState(false);
+  const [fontLoaded, setFontLoaded] = useState(false);
 
-  if(!fontLoaded) {
+  if (!fontLoaded) {
     return (
-      <AppLoading 
-        startAsync={fetchFonts} 
+      <AppLoading
+        startAsync={fetchFonts}
         onFinish={() => setFontLoaded(true)}
       />
     );
