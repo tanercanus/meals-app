@@ -31,23 +31,15 @@ const FiltersScreen = props => {
     const [isVegetarian, setIsVegetarian] = useState(false);
 
     const saveFilters = useCallback(() => {
-        console.log('saveFilters called');
         const aapliedFilters = {
             glutenFree: isGlutenFree,
             lactoseFree: isLactoseFree,
             vegan: isVegan,
             vegetarian: isVegetarian
         }
-        console.log(aapliedFilters);
     }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
-
-    useEffect(() => {
-        console.log('empty');
-    }
         
-    );
     useEffect(() => {
-        console.log('useEffect called');
         navigation.setParams({
             save: saveFilters
         });
